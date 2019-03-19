@@ -1,0 +1,129 @@
+<nav class="navbar is-transparent">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <h5 class="title has-text-light">Local Quest</h5>
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenuHeroB" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active has-text-light">
+          Home
+        </a>
+        <a class="navbar-item has-text-light">
+          Calendar
+        </a>
+        <a class="navbar-item has-text-light">
+          FAQ
+        </a>
+        
+        {{!-- <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            User Name <!--Put HBS Logic for Username Here-->
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item delete">
+              Delete Account
+            </a>
+          </div>
+        </div> --}}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section has-background-transparent">
+  <div class="container">
+    <div class="columns">
+
+      <div class="column has-background-white is-centered rounded-col">
+
+        <div class="container">
+          <div class="tabs is-centered is-boxed is-medium">
+            <ul>
+              <li class="is-active tab-button" id="quests">
+                <a onClick="switchToQuests()">
+                  <span class="icon is-small"><i class="fas fa-chess-rook" aria-hidden="true"></i></span>
+                  <span>Quests</span>
+                </a>
+              </li>
+              <li class="tab-button" id="completed">
+                <a onClick="switchToCompleted()">
+                  <span class="icon is-small"><i class="far fa-check-circle" aria-hidden="true"></i></span>
+                  <span>Completed</span>
+                </a>
+              </li>
+              <li class="tab-button" id="map">
+                <a onClick="switchToMap()">
+                  <span class="icon is-small"><i class="fas fa-map-marked" aria-hidden="true"></i></span>
+                  <span>Map</span>
+                </a>
+              </li>
+              <li class="tab-button" id="rewards">
+                <a onClick="switchToRewards()">
+                  <span class="icon is-small"><i class="fas fa-award" aria-hidden="true"></i></span>
+                  <span>Rewards</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <div id="questsContent">
+            <!--Quest Content-->
+            {{#each quest}}
+            {{#unless completed}}
+            <div class="tile is-ancestor">
+              <div class="tile is-parent is-12">
+                <div class="tile is-child box has-background-info" id="challenge{{id}}">
+                  <h4 class="title is-size-5" style="text-align:center;">{{questName}}</h4>
+                  {{!-- <div class="field is-grouped"> --}}
+                    <p class="has-text-centered">{{questDescribe}}</p>
+                    <button type="button" class="button complete is-success is-pulled-right ml-4" name="complete"
+                      data-id="{{id}}">Completed!</button>
+                    {{!-- </div> --}}
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/each}}
+
+          </div>
+          <!--Completed Quest Content-->
+          <div class="is-hidden" id="completedContent">
+            {{#each quest}}
+            {{#if completed}}
+            <div class="tile is-ancestor">
+              <div class="tile is-parent is-12">
+                <div class="tile is-child box has-background-danger" id='completedChallenge{{id}}'>
+                  <h4 class="title is-size-5" style="text-align:center;">{{questName}}</h4>
+                  <p class="has-text-centered">{{questDescribe}}</p>
+                </div>
+              </div>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+
+          <!--Map Content-->
+          <div class="is-hidden" id="mapContent">
+            <h1 class="title is-1" style="text-align:center;">Map Goes Here</h1>
+          </div>
+
+          <!--Reward Content-->
+          <div class="is-hidden" id="rewardsContent">
+            <h1 class="title is-1" style="text-align:center;">Show Rewards!</h1>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

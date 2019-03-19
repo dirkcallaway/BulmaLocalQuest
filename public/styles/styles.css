@@ -1,0 +1,63 @@
+html,
+body {
+  height: 100%;
+}
+
+#broomfieldMap {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+#fortcollinsMap {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+body {
+  height: 100%;
+  background: rgba(0, 0, 0, .65) url("../images/DSC_0240.JPG");
+  background-blend-mode: darken;
+  /* background-image: url("./images/DSC_0226.JPG"); */
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.rounded-col {
+  border-radius: 5px;
+}
+
+
+.main-box {
+  height: 100%;
+  background: rgba(0, 0, 0, .65) url("../images/DSC_0226.JPG");
+  background-blend-mode: darken;
+  /* background-image: url("./images/DSC_0226.JPG"); */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+a,
+p,
+.title,
+.subtitle {
+  font-family: 'Cutive', serif;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+.is-transparent {
+  background: transparent;
+}
+
+.ml-4 {
+  margin-left: 20px;
+}

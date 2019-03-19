@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+  {{{body}}}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+</body>
+<script src="/js/profile.js"></script>
+<script src= "/js/userJS.js"></script>
+
+<script>
+
+  $(".login-button").on("click", function () {
+    $("#login-modal").addClass("is-active");
+    $("#signup-modal").removeClass("is-active");
+  })
+
+  $(".signup-button").on("click", function () {
+    $("#signup-modal").addClass("is-active");
+    $("#login-modal").removeClass("is-active");
+  })
+
+  $(".delete, .modal-background").on("click", function () {
+    $("#login-modal, #signup-modal").removeClass("is-active");
+  })
+
+  function removeActive() {
+    $("li").each(function() {
+      $(this).removeClass("is-active");
+    });
+  }
+
+  function hideAll() {
+    $("#questsContent").addClass("is-hidden");
+    $("#completedContent").addClass("is-hidden");
+    $("#mapContent").addClass("is-hidden");
+    $("#rewardsContent").addClass("is-hidden");
+  }
+
+  function switchToQuests() {
+    removeActive();
+    hideAll();
+    $("#quests").addClass("is-active");
+    $("#questsContent").removeClass("is-hidden");
+  }
+
+  function switchToCompleted() {
+    removeActive();
+    hideAll();
+    $("#completed").addClass("is-active");
+    $("#completedContent").removeClass("is-hidden");
+  }
+
+  function switchToMap() {
+    removeActive();
+    hideAll();
+    $("#map").addClass("is-active");
+    $("#mapContent").removeClass("is-hidden");
+  }
+
+  function switchToRewards() {
+    removeActive();
+    hideAll();
+    $("#rewards").addClass("is-active");
+    $("#rewardsContent").removeClass("is-hidden");
+  }
+</script>
+
+</html>
